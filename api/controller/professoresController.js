@@ -1,4 +1,4 @@
-const Produto = require('../models/produto');
+const Produto = require('../model/professoresModel');
 
 
 // Controlador para obter todos os Produtos
@@ -27,41 +27,3 @@ res.status(404).send({ message: 'Produto não encontrado' });
 };
 
 
-// Controlador para criar um novo Produto
-exports.createProduto = (req, res) => {
-Produto.createProduto(req.body, (err, result) => {
-if (err) {
-res.status(500).send(err);
-} else {
-res.status(201).json(result);
-}
-});
-};
-
-
-// Controlador para atualizar um Produto existente
-exports.updateProduto = (req, res) => {
-Produto.updateProduto(req.params.id, req.body, (err, result) => {
-if (err) {
-res.status(500).send(err);
-} else if (result.changes) {
-res.status(200).json(result);
-} else {
-res.status(404).send({ message: 'Produto não encontrado' });
-}
-
-});
-};
-
-
-// Controlador para deletar um Produto
-exports.deleteProduto = (req, res) => {
-Produto.deleteProduto(req.params.id, (err, result) => {
-if (err) {
-res.status(500).send(err);
-} else if (result.changes) {
-res.status(200).json({ message: 'Produto deletado com sucesso' });
-} else {
-res.status(404).send({ message: 'Produto não encontrado' });
-}})
-};
