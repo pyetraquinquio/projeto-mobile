@@ -1,27 +1,27 @@
-const Produto = require('../model/professoresModel');
+const Professor = require('../model/professoresModel');
 
 
 // Controlador para obter todos os Produtos
-exports.getAllProdutos = (req, res) => {
-Produto.getAllProdutos((err, produtos) => {
+exports.getAllProfessores = (req, res) => {
+Professor.getAllProfessores((err, professores) => {
 if (err) {
 res.status(500).send(err);
 } else {
-res.json(produtos);
+res.json(professores);
 }
 });
 };
 
 
 // Controlador para obter um Produto pelo ID
-exports.getProdutoById = (req, res) => {
-Produto.getProdutoById(req.params.id, (err, produto) => {
+exports.getProfessorById = (req, res) => {
+Produto.getProfessorById(req.params.id, (err, professor) => {
 if (err) {
 res.status(500).send(err);
-} else if (produto) {
-res.json(produto);
+} else if (professor) {
+res.json(professor);
 } else {
-res.status(404).send({ message: 'Produto não encontrado' });
+res.status(404).send({ message: 'Professor não encontrado' });
 }
 });
 };
