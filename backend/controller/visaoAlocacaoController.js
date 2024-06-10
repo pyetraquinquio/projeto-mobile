@@ -1,15 +1,14 @@
 const visao = require('../model/VisaoAlocacoesModel');
 
-
-// Controlador para obter um visao pelo ID
+// Controlador para obter todos os VisaoAlocacao
 exports.getVisaoById = (req, res) => {
-visao.getVisaoById(req.params.id, (err, visao) => {
+visao.getVisaoById((err, visao_aloc) => {
 if (err) {
 res.status(500).send(err);
 } else if (visao) {
 res.json(visao_aloc);
 } else {
-res.status(404).send({ message: 'visao não encontrado' });
+res.json(visao_aloc);
 }
 });
 };
