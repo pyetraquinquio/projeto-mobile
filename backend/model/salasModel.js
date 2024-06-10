@@ -22,3 +22,7 @@ db.close();
 callback(err, rows);
 });
 }
+
+module.exports = {
+getAllClientes
+};
