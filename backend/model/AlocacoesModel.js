@@ -24,19 +24,6 @@ callback(err, rows);
 }
 
 
-// Função para buscar um cliente por ID
-function getAlocacaoById(id, callback) {
-const db = openDbConnection();
-db.get("SELECT * FROM Alocacao WHERE id = ?", [id], (err, row) => {
-db.close();
-callback(err, row);
-});
-}
-
-
-
 module.exports = {
-getAllAlocacoes,
-getAlocacaoById,
-
+getAllAlocacoes
 };
