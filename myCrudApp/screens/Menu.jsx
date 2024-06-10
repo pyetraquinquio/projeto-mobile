@@ -8,28 +8,32 @@ export default function HomeScreen({ navigation }) {
 
           return (
             <View style={styles.container}>
-           <Button
+           <Button style={styles.botao}
            placeholder="Consultar Professor"
            title="Pesquisar Professor"
         onPress={() => navigation.navigate('Professores')}
-           />
+        color={"#E19FED"}
+          />
 
-           <Button
+           <Button style={styles.botao}
            placeholder="Consultar Sala"
            title="Pesquisar Sala"
         onPress={() => navigation.navigate('Salas')}
+        color={"#E19FED"}
            />
 
-           <Button
+           <Button style={styles.botao}
            placeholder="Consultar Alocação"
            title="Pesquisar Alocação"
         onPress={() => navigation.navigate('Alocações')}
+        color={"#E19FED"}
            />
 
-          <Button
+          <Button style={styles.botao}
            placeholder="Consultar Visão"
            title="Pesquisar Visão"
         onPress={() => navigation.navigate('Visões')}
+        color={"#E19FED"}
            />
 
            </View>
@@ -41,19 +45,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#fff", // Cor de fundo branca
+    backgroundColor: "#f4def8", // Cor de fundo branca
   },
-  input: {
-    height: 40, // Altura do input
-    borderColor: "#ccc", // Cor da borda
+  botao: {
+    borderColor: "black", // Cor da borda
     borderWidth: 1, // Largura da borda
     marginBottom: 10, // Margem inferior
     padding: 10, // Espaçamento interno
-  },
-  product: {
-    padding: 10, // Espaçamento interno
-    marginTop: 20, // Margem superior
-    borderBottomColor: "#ccc", // Cor da borda inferior
-    borderBottomWidth: 1, // Largura da borda inferior
-  },
+    justifyContent: "space-around"
+  }
 });

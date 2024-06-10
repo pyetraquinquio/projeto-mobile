@@ -15,7 +15,7 @@ export default function ConsultarAlocacoes() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setAlocacoes(data.alocacoes); // Atualiza o estado com a lista de produtos
+      setAlocacoes(data.alocacao); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todas alocações:", error); // Loga o erro no console
@@ -32,7 +32,7 @@ export default function ConsultarAlocacoes() {
       {/* Exibe a lista de produtos, se existir */}
       {alocacoes.length > 0 && (
         <FlatList
-          data={alocacoes} // Dados da lista de produtos
+          data={alocacao} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.alocacao}>

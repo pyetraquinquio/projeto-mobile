@@ -15,7 +15,7 @@ export default function ConsultarSalas() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setSalas(data.salas); // Atualiza o estado com a lista de produtos
+      setSalas(data.sala); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todas as salas:", error); // Loga o erro no console
@@ -29,9 +29,9 @@ export default function ConsultarSalas() {
       <Button title="Consultar" onPress={ConsultarSalas} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos as Salas" onPress={fetchAllSalas} />
-      {salas.length > 0 && (
+      {sala.length > 0 && (
         <FlatList
-          data={salas} // Dados da lista de produtos
+          data={sala} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.sala}>

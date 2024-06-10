@@ -16,7 +16,7 @@ export default function ConsultarProfessores() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setProfessores(data.professores); // Atualiza o estado com a lista de produtos
+      setProfessores(data.professor); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todos os professores:", error); // Loga o erro no console
@@ -32,7 +32,7 @@ export default function ConsultarProfessores() {
       <Button title="Listar Todos os Professores" onPress={fetchAllProfessores} />
 
       {/* Exibe a lista de produtos, se existir */}
-      {professores.length > 0 && (
+      {professor.length > 0 && (
         <FlatList
           data={professor} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item

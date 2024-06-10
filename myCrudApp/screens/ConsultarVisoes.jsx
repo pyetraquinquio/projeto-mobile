@@ -5,6 +5,9 @@ const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes() {
+
+  const [visao, setVisao] = useState([]); 
+
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
     try {
@@ -14,7 +17,7 @@ export default function ConsultarVisoes() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setVisoes(data.visoes); // Atualiza o estado com a lista de produtos
+      setVisao(data.visoes); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todas as visões:", error); // Loga o erro no console
@@ -28,7 +31,7 @@ export default function ConsultarVisoes() {
       <Button title="Consultar" onPress={ConsultarVisoes} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos as Visões" onPress={fetchAllVisoes} />
-      {visoes.length > 0 && (
+      {visao.length > 0 && (
         <FlatList
           data={visoes} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
