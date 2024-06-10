@@ -1,27 +1,13 @@
-// app.js
+//clienteRoutes.js
 const express = require('express');
-const app = express();
-const port = 3000;
+const router = express.Router();
+const alocacoesController = require('../controllers/alocacoesController');
+
+// lembrando que a rota raiz tem clientes, definido no app.js
 
 
-// Middleware para analisar o corpo das requisições em JSON
-app.use(express.json());
+// Rota para obter todos os clientes
+router.get('/', alocacoesController.getAllAlocacoes);
 
 
-// Importando as rotas do cliente
-const alocacoesRoutes = require('./routes/alocacoesRoutes');
-
-
-
-
-
-// Usando as rotas do cliente com o prefixo '/clientes'
-
-app.use('/alocacoes', alocacoesRoutes);
-
-
-
-// Iniciando o servidor na porta especificada
-app.listen(port, () => {
-console.log(`Servidor rodando em http://localhost:${port}`);
-});
+module.exports = router;
