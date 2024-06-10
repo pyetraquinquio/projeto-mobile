@@ -9,7 +9,7 @@ export default function ConsultarVisoes() {
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
     try {
-      const response = await fetch(`${API_URL}/visao`); // Faz a requisição GET para a API
+      const response = await fetch(`${API_URL}/visao_aloc`); // Faz a requisição GET para a API
       if (!response.ok) {
         const errorResponse = await response.text(); // Lê a resposta de erro
         throw new Error(errorResponse); // Lança um erro com a resposta
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#fff", // Cor de fundo branca
+    backgroundColor: "#f4def8", // Cor de fundo branca
   },
   visao: {
     padding: 10, // Espaçamento interno
