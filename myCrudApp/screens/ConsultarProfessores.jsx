@@ -34,7 +34,7 @@ export default function ConsultarProfessores() {
       {/* Exibe a lista de produtos, se existir */}
       {professores.length > 0 && (
         <FlatList
-          data={professores} // Dados da lista de produtos
+          data={professor} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.professor}>
