@@ -26,7 +26,7 @@ export default function ConsultarSalas() {
   return (
     <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={handleSearch} />
+      <Button title="Consultar" onPress={Search} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos as Salas" onPress={fetchAllSalas} />
       {salas.length > 0 && (

@@ -27,7 +27,7 @@ export default function ConsultarProfessores() {
   return (
     <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={handleSearch} />
+      <Button title="Consultar" onPress={Search} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos os Professores" onPress={fetchAllProfessores} />
 
