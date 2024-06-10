@@ -14,15 +14,15 @@ return db;
 }
 
 
-// Função para buscar todos os clientes
-function getAllVisao(callback) {
-const db = openDbConnection();
-db.all("SELECT * FROM visao_aloc", [], (err, rows) => {
-db.close();
-callback(err, rows);
-});
-}
+// Função para buscar um cliente por ID
+function getVisaoById(id, callback) {
+    const db = openDbConnection();
+    db.get("SELECT * FROM visao_aloc WHERE id = ?", [id], (err, row) => {
+    db.close();
+    callback(err, row);
+    });
+    }
 
 module.exports = {
-    getAllVisao
+    getVisaoById
     };
