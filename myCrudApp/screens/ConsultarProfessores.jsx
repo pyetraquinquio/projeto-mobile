@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#fff", // Cor de fundo branca
+    backgroundColor: "#f4def8", // Cor de fundo branca
   },
   professor: {
     padding: 10, // Espaçamento interno
