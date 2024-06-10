@@ -9,19 +9,18 @@ app.use(express.json());
 
 
 // Importando as rotas do cliente
-const professorRoutes = require('./routes/professorRoutes');
-const alocacoesRoutes = require('./routes/alocacoesRoutes');
-const clienteRoutes = require('./routes/clienteRoutes');
-const produtoRoutes = require('./routes/produtoRoutes');
-
+const alocacaoRoutes = require('./routes/rotasAlocacao');
+const professoresRoutes = require('./routes/rotasProfessor');
+const salasRoutes = require('./routes/rotasSala');
+const visaoRoutes = require('./routes/rotasVisaoaloc');
 
 
 
 // Usando as rotas do cliente com o prefixo '/clientes'
-app.use('/professor', professorRoutes);
-app.use('/alocacoes', alocacoesRoutes);
-app.use('/clientes', clienteRoutes);
-app.use('/produtos', produtoRoutes);
+app.use('/alocacao', alocacaoRoutes);
+app.use('/professores', professoresRoutes);
+app.use('/salas', salasRoutes);
+app.use('/professores', visaoRoutes);
 
 
 // Iniciando o servidor na porta especificada
