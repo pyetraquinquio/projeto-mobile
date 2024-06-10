@@ -26,7 +26,7 @@ export default function ConsultarAlocacoes() {
   return (
     <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={Search} />
+      <Button title="Consultar" onPress={ConsultarAlocacoes} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos as Alocações" onPress={fetchAllAlocacoes} />
       {/* Exibe a lista de produtos, se existir */}

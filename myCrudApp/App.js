@@ -33,8 +33,6 @@ export default function App() {
 
         <Stack.Screen name="Visões" component={ConsultarVisoes} />
 
-        
-
       </Stack.Navigator>
     </NavigationContainer>
   );

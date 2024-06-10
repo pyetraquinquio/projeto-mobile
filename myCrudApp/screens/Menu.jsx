@@ -11,25 +11,25 @@ export default function HomeScreen({ navigation }) {
            <Button
            placeholder="Consultar Professor"
            title="Pesquisar Professor"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Professores')}
            />
 
            <Button
            placeholder="Consultar Sala"
            title="Pesquisar Sala"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Salas')}
            />
 
            <Button
            placeholder="Consultar Alocação"
            title="Pesquisar Alocação"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Alocações')}
            />
 
           <Button
            placeholder="Consultar Visão"
            title="Pesquisar Visão"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Visões')}
            />
 
            </View>
