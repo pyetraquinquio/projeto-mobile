@@ -17,7 +17,7 @@ return db;
 // Função para buscar todos os clientes
 function getAllProfessores(callback) {
 const db = openDbConnection();
-db.all("SELECT * FROM Professores", [], (err, rows) => {
+db.all("SELECT * FROM professor", [], (err, rows) => {
 db.close();
 callback(err, rows);
 });
@@ -27,7 +27,7 @@ callback(err, rows);
 // Função para buscar um cliente por ID
 function getProfessorById(id, callback) {
 const db = openDbConnection();
-db.get("SELECT * FROM Professores WHERE id = ?", [id], (err, row) => {
+db.get("SELECT * FROM professor WHERE id = ?", [id], (err, row) => {
 db.close();
 callback(err, row);
 });
