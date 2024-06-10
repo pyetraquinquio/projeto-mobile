@@ -15,14 +15,14 @@ return db;
 
 
 // Função para buscar todos os clientes
-function getAllClientes(callback) {
+function getAllSalas(callback) {
 const db = openDbConnection();
-db.all("SELECT * FROM Clientes", [], (err, rows) => {
+db.all("SELECT * FROM salas", [], (err, rows) => {
 db.close();
 callback(err, rows);
 });
 }
 
 module.exports = {
-getAllClientes
+getAllSalas
 };

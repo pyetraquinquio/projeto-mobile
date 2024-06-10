@@ -13,17 +13,4 @@ res.json(professores);
 };
 
 
-// Controlador para obter um Produto pelo ID
-exports.getProfessorById = (req, res) => {
-Produto.getProfessorById(req.params.id, (err, professor) => {
-if (err) {
-res.status(500).send(err);
-} else if (professor) {
-res.json(professor);
-} else {
-res.status(404).send({ message: 'Professor não encontrado' });
-}
-});
-};
-
 

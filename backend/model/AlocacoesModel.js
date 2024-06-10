@@ -17,7 +17,7 @@ return db;
 // Função para buscar todos os clientes
 function getAllAlocacoes(callback) {
 const db = openDbConnection();
-db.all("SELECT * FROM Alocacoes", [], (err, rows) => {
+db.all("SELECT * FROM Alocacao", [], (err, rows) => {
 db.close();
 callback(err, rows);
 });
@@ -27,7 +27,7 @@ callback(err, rows);
 // Função para buscar um cliente por ID
 function getAlocacaoById(id, callback) {
 const db = openDbConnection();
-db.get("SELECT * FROM Alocacoes WHERE id = ?", [id], (err, row) => {
+db.get("SELECT * FROM Alocacao WHERE id = ?", [id], (err, row) => {
 db.close();
 callback(err, row);
 });
