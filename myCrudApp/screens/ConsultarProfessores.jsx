@@ -1,7 +1,7 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.42.55:3000/api"; // Ajuste para o seu IP
+const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarProfessores() {
@@ -27,14 +27,14 @@ export default function ConsultarProfessores() {
   return (
     <View style={styles.container}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={handleSearch} />
+      <Button title="Consultar" onPress={ConsultarProfessores} />
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos os Professores" onPress={fetchAllProfessores} />
 
       {/* Exibe a lista de produtos, se existir */}
       {professores.length > 0 && (
         <FlatList
-          data={professores} // Dados da lista de produtos
+          data={professor} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
             <View style={styles.professor}>

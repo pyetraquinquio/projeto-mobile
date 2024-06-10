@@ -1,7 +1,7 @@
 import {View, Button, StyleSheet} from "react-native";
 
 // Define a URL base da API, ajuste conforme necessário
-const API_URL = "http://10.136.42.55:3000/api"; // Ajuste para o IP na sua maquina
+const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o IP na sua maquina
 
 // Componente principal da tela HomeScreen
 export default function HomeScreen({ navigation }) {
@@ -11,25 +11,25 @@ export default function HomeScreen({ navigation }) {
            <Button
            placeholder="Consultar Professor"
            title="Pesquisar Professor"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Professores')}
            />
 
            <Button
            placeholder="Consultar Sala"
            title="Pesquisar Sala"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Salas')}
            />
 
            <Button
            placeholder="Consultar Alocação"
            title="Pesquisar Alocação"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Alocações')}
            />
 
           <Button
            placeholder="Consultar Visão"
            title="Pesquisar Visão"
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Visões')}
            />
 
            </View>
