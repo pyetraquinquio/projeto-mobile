@@ -1,4 +1,4 @@
-import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Button, Text, FlatList, StyleSheet, TextInput} from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
@@ -27,6 +27,14 @@ export default function ConsultarVisoes() {
 
   return (
     <View style={styles.container}>
+
+
+<TextInput
+        style={styles.botao}
+        placeholder="Id da visão"
+        value={id}
+        onChangeText={setId}
+      />
 
 <View style={styles.botao}>
       {/* Botão para buscar um produto específico */}

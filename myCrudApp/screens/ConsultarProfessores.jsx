@@ -1,4 +1,4 @@
-import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Button, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#f4def8",// Cor de fundo branca
+    backgroundColor: "#f4def8",// Cor de fundo roxo claro
   },
   botao: {
     borderColor: "black", // Cor da borda
