@@ -27,16 +27,23 @@ export default function ConsultarVisoes() {
 
   return (
     <View style={styles.container}>
+
+<View style={styles.botao}>
       {/* Botão para buscar um produto específico */}
       <Button title="Consultar" onPress={ConsultarVisoes} />
+      </View>
+
+      <View style={styles.botao}>
       {/* Botão para buscar todos os produtos */}
       <Button title="Listar Todos as Visões" onPress={fetchAllVisoes} />
+      </View>
+
       {visao.length > 0 && (
         <FlatList
           data={visoes} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item
           renderItem={({ item }) => (
-            <View style={styles.visao}>
+            <View style={styles.descricao}>
               <Text>Nome do Professor: {item.nome_professor}</Text>
               <Text>Nome da Sala: {item.nomesala}</Text>
               <Text>Bloco: {item.bloco}</Text>
@@ -58,16 +65,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#f4def8", // Cor de fundo branca
+    backgroundColor: "#f4def8",// Cor de fundo branca
   },
-  visao: {
+  botao: {
+    borderColor: "black", // Cor da borda
+    borderWidth: 2, // Largura da borda
+    marginBottom: 30, // Margem inferior
     padding: 10, // Espaçamento interno
-    marginTop: 20, // Margem superior
-    borderBottomColor: "#ccc", // Cor da borda inferior
-    borderBottomWidth: 1, // Largura da borda inferior
+    marginTop: 30,
+    backgroundColor: "#E19FED",
+    borderRadius: 30,
+    marginLeft: 100,
+    marginRight: 100
+
   },
-  error: {
-    color: 'red', // Cor do texto do erro
-    marginTop: 20, // Margem superior
-  },
+
+  descricao: {
+    borderColor: "black", // Cor da borda
+    borderWidth: 2, // Largura da borda
+    marginBottom: 30, // Margem inferior
+    padding: 10, // Espaçamento interno
+    marginTop: 30,
+    borderRadius: 30,
+   
+
+  }
 });

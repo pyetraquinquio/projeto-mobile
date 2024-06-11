@@ -1,5 +1,6 @@
 // Importa o React
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 // Importa os componentes necessários da biblioteca de navegação
 import { NavigationContainer } from '@react-navigation/native';
@@ -37,3 +38,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
+

@@ -8,33 +8,42 @@ export default function HomeScreen({ navigation }) {
 
           return (
             <View style={styles.container}>
-           <Button style={styles.botao}
+              <View style={styles.botao}>
+           <Button
            placeholder="Consultar Professor"
            title="Pesquisar Professor"
         onPress={() => navigation.navigate('Professores')}
         color={"#E19FED"}
           />
+          </View>
 
-           <Button style={styles.botao}
+          <View style={styles.botao}>
+           <Button
            placeholder="Consultar Sala"
            title="Pesquisar Sala"
         onPress={() => navigation.navigate('Salas')}
         color={"#E19FED"}
            />
+           </View>
 
-           <Button style={styles.botao}
+          
+<View style={styles.botao}>
+           <Button
            placeholder="Consultar Alocação"
            title="Pesquisar Alocação"
         onPress={() => navigation.navigate('Alocações')}
         color={"#E19FED"}
            />
+           </View>
 
-          <Button style={styles.botao}
+          <View style={styles.botao}>
+          <Button
            placeholder="Consultar Visão"
            title="Pesquisar Visão"
         onPress={() => navigation.navigate('Visões')}
         color={"#E19FED"}
            />
+           </View>
 
            </View>
            );
@@ -45,13 +54,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // Ocupa todo o espaço disponível
     padding: 20, // Espaçamento interno
-    backgroundColor: "#f4def8", // Cor de fundo branca
+    backgroundColor: "#f4def8",// Cor de fundo branca
   },
   botao: {
     borderColor: "black", // Cor da borda
-    borderWidth: 1, // Largura da borda
-    marginBottom: 10, // Margem inferior
+    borderWidth: 2, // Largura da borda
+    marginBottom: 40, // Margem inferior
     padding: 10, // Espaçamento interno
-    justifyContent: "space-around"
+    marginTop: 40,
+    backgroundColor: "#E19FED",
+    borderRadius: 30,
+    marginLeft: 50,
+    marginRight: 50
+
   }
 });
