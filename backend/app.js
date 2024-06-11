@@ -20,7 +20,7 @@ const visaoRoutes = require('./routes/rotasVisaoaloc');
 app.use('/alocacao', alocacaoRoutes);
 app.use('/professores', professoresRoutes);
 app.use('/salas', salasRoutes);
-app.use('/professores', visaoRoutes);
+app.use('/visao', visaoRoutes);
 
 
 // Iniciando o servidor na porta especificada

@@ -1,13 +1,10 @@
 //clienteRoutes.js
 const express = require('express');
 const router = express.Router();
-const salasController = require('../controller/salasController');
-
-// lembrando que a rota raiz tem clientes, definido no app.js
-
+const salaController = require('../controller/salasController');
 
 // Rota para obter todos os clientes
-router.get('/', salasController.getAllSalas);
+router.get('/', salaController.getAllSalas);
 
 
 module.exports = router;

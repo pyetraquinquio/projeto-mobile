@@ -14,7 +14,7 @@ return db;
 }
 
 
-// Função para buscar um cliente por ID
+// Função para buscar um Produto por ID
 function getVisaoById(id, callback) {
     const db = openDbConnection();
     db.get("SELECT * FROM visao_aloc WHERE id = ?", [id], (err, row) => {
