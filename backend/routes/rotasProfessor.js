@@ -1,7 +1,7 @@
 //clienteRoutes.js
 const express = require('express');
 const router = express.Router();
-const professorController = require('../controller/professoresController');
+const professorController = require('../controllers/professoresController');
 
 // lembrando que a rota raiz tem clientes, definido no app.js
 

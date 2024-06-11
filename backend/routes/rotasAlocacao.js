@@ -1,7 +1,7 @@
 //clienteRoutes.js
 const express = require('express');
 const router = express.Router();
-const alocacoesController = require('../controller/alocacoesController');
+const alocacoesController = require('../controllers/alocacoesController');
 
 // lembrando que a rota raiz tem clientes, definido no app.js
 
