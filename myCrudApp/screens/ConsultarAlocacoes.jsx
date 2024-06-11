@@ -1,10 +1,14 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarAlocacoes() {
+
+  const [alocacao, setAlocacao] = useState([]);
+  const [error, setError] = useState(null);
 
   // Função para buscar todos os produtos na API
   const fetchAllAlocacoes = async () => {
@@ -15,7 +19,7 @@ export default function ConsultarAlocacoes() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setAlocacoes(data.alocacao); // Atualiza o estado com a lista de produtos
+      setAlocacao(data.alocacao); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todas alocações:", error); // Loga o erro no console
@@ -28,16 +32,12 @@ export default function ConsultarAlocacoes() {
 
 <View style={styles.botao}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={ConsultarAlocacoes} />
+      <Button title="Consultar" onPress={fetchAllAlocacoes}
+                  color={"#E19FED"} />
       </View>
 
-      <View style={styles.botao}>
-      {/* Botão para buscar todos os produtos */}
-      <Button title="Listar Todos as Alocações" onPress={fetchAllAlocacoes} />
-</View>
-
       {/* Exibe a lista de produtos, se existir */}
-      {alocacoes.length > 0 && (
+      {alocacao.length > 0 && (
         <FlatList
           data={alocacao} // Dados da lista de produtos
           keyExtractor={(item) => item.id.toString()} // Função para extrair a chave de cada item

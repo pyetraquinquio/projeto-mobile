@@ -1,4 +1,5 @@
-import { View, Button, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Button, Text, FlatList, StyleSheet,} from 'react-native';
+import { useState } from 'react';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
@@ -6,6 +7,9 @@ const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 // Componente principal da tela SearchScreen
 export default function ConsultarProfessores() {
   // Define os estados para os campos de entrada, produto individual, lista de produtos e erros
+ 
+  const [professor, setProfessor] = useState([]);
+  const [error, setError] = useState(null);
 
   // Função para buscar todos os produtos na API
   const fetchAllProfessores = async () => {
@@ -16,7 +20,7 @@ export default function ConsultarProfessores() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setProfessores(data.professor); // Atualiza o estado com a lista de produtos
+      setProfessor(data.professor); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todos os professores:", error); // Loga o erro no console
@@ -28,12 +32,9 @@ export default function ConsultarProfessores() {
     <View style={styles.container}>
       <View style={styles.botao}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={ConsultarProfessores} />
-      </View>
+      <Button title="Consultar" onPress={fetchAllProfessores} 
+            color={"#E19FED"} />
 
-      <View style={styles.botao}>
-      {/* Botão para buscar todos os produtos */}
-      <Button title="Listar Todos os Professores" onPress={fetchAllProfessores} />
       </View>
 
       {/* Exibe a lista de produtos, se existir */}

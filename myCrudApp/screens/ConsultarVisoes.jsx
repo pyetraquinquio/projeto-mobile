@@ -1,4 +1,5 @@
 import { View, Button, Text, FlatList, StyleSheet, TextInput} from 'react-native';
+import { useState } from 'react';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
@@ -6,7 +7,9 @@ const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 // Componente principal da tela SearchScreen
 export default function ConsultarVisoes() {
 
-  const [visao, setVisao] = useState([]); 
+  const [visao, setVisao] = useState([]);
+  const [error, setError] = useState(null);
+  const [id, setId] = useState([]);
 
   // Função para buscar todos os produtos na API
   const fetchAllVisoes = async () => {
@@ -38,12 +41,8 @@ export default function ConsultarVisoes() {
 
 <View style={styles.botao}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={ConsultarVisoes} />
-      </View>
-
-      <View style={styles.botao}>
-      {/* Botão para buscar todos os produtos */}
-      <Button title="Listar Todos as Visões" onPress={fetchAllVisoes} />
+      <Button title="Consultar" onPress={fetchAllVisoes} 
+      color={"#E19FED"}/>
       </View>
 
       {visao.length > 0 && (

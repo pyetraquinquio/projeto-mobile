@@ -1,10 +1,14 @@
 import { View, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 // Define a URL base da API, ajuste conforme necessário
 const API_URL = "http://10.136.35.36:3000/api"; // Ajuste para o seu IP
 
 // Componente principal da tela SearchScreen
 export default function ConsultarSalas() {
+
+  const [sala, setSala] = useState([]);
+  const [error, setError] = useState(null);
 
   // Função para buscar todos os produtos na API
   const fetchAllSalas = async () => {
@@ -15,7 +19,7 @@ export default function ConsultarSalas() {
         throw new Error(errorResponse); // Lança um erro com a resposta
       }
       const data = await response.json(); // Converte a resposta para JSON
-      setSalas(data.sala); // Atualiza o estado com a lista de produtos
+      setSala(data.sala); // Atualiza o estado com a lista de produtos
       setError(null); // Reseta o estado de erro
     } catch (error) {
       console.error("Erro ao buscar todas as salas:", error); // Loga o erro no console
@@ -28,14 +32,11 @@ export default function ConsultarSalas() {
 
       <View style={styles.botao}>
       {/* Botão para buscar um produto específico */}
-      <Button title="Consultar" onPress={ConsultarSalas} />
+      <Button title="Consultar" onPress={fetchAllSalas} 
+            color={"#E19FED"}/>
       </View>
 
-      <View style={styles.botao}>
-      {/* Botão para buscar todos os produtos */}
-      <Button title="Listar Todos as Salas" onPress={fetchAllSalas} />
-      </View>
-      
+
       {sala.length > 0 && (
         <FlatList
           data={sala} // Dados da lista de produtos
