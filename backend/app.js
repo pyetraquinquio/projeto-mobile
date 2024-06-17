@@ -2,11 +2,12 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const cors = require("cors")
 
 
 // Middleware para analisar o corpo das requisições em JSON
 app.use(express.json());
-
+app.use(cors())
 
 // Importando as rotas do cliente
 const alocacaoRoutes = require('./routes/rotasAlocacao');
