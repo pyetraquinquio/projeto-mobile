@@ -11,7 +11,7 @@ function openDbConnection() {
     return db;
     } 
 
-
+                                                                                                                                                                                                   
 
 // function getVisaoById(id, callback) {
 //     const db = openDbConnection();
